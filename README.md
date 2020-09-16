@@ -1,3 +1,5 @@
+![Alt-Text](/pictures/photo-1591198106611-7720c0ecdc97.jpeg)
+
 # Android-ViewModelExample
 
 Eine Simple Android App, welche die Funktionsweise des ViewModels gepaart mit einem Model zeigt. 
@@ -15,4 +17,3 @@ Diese App ist nicht aktuell, die folgenden Punkte werden hier noch dargestellt:
 - Unterschiedliche Fragmente anzeigen
 - Daten speichern, lesen und löschen in dem App-Folder
 
-![Alt-Text](/pictures/photo-1591198106611-7720c0ecdc97.jpeg)
