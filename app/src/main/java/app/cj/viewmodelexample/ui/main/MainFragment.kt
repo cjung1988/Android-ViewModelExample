@@ -37,6 +37,9 @@ class MainFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
+        // initialisiert den Button
+        this.initButton()
+
         // Viewmodel wird hier inizialisiert.
         viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
 
@@ -95,7 +98,29 @@ class MainFragment : Fragment() {
 
         // Launcht automatisch beim start der App den Server upload.
         lifecycleScope.launch {
-            // todo gleiche funktion muss noch bei einem Button druck ausgeführt werden
+            viewModel.changeTest("155155")
+        }
+    }
+
+    /**
+     * Initialisiert den Button-Listener
+     * sobald auf den Button gedrückt wird,
+     * wird diese funktion ausgeführt
+     */
+    private fun initButton() {
+        btn_start_upload.setOnClickListener {
+            Log.d(TAG, "Button-Start-Upload")
+            this.btnStartUploadHandleClick()
+        }
+    }
+
+    /**
+     * Diese funktion wir dann ausgelöst, wenn auf den Knopf
+     * gedrückt wird
+     */
+    private fun btnStartUploadHandleClick() {
+        // Server Upload
+        lifecycleScope.launch {
             viewModel.changeTest("155155")
         }
     }
