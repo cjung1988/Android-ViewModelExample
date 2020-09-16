@@ -17,9 +17,9 @@ import kotlinx.coroutines.launch
 
 class MainFragment : Fragment() {
 
-    val TAG = this.javaClass.simpleName
+    private val TAG = this.javaClass.simpleName
 
-    val ANIMATION_DURATION: Long = 500
+    private val ANIMATION_DURATION: Long = 500
 
     companion object {
         fun newInstance() = MainFragment()
@@ -60,6 +60,8 @@ class MainFragment : Fragment() {
         // wird die Variable geändert, wird der Observer gerufen
         viewModel.updateIsRunning.observe(viewLifecycleOwner, Observer { value ->
             if (value) {
+                // Versteckt den Button
+                this.hideButton()
 
                 // clear Textfield
                 tv_main_message.animate().alpha(0.0f).setDuration(ANIMATION_DURATION)
@@ -89,6 +91,9 @@ class MainFragment : Fragment() {
                 tv_loading_status.animate().alpha(1.0f).setDuration(ANIMATION_DURATION)
 
             } else {
+                // zeigt den Button an
+                this.showButton()
+
                 // Versteckt den Status-Text und die Progressbar
                 // Das passiert als animation
                 pb_loading_data.animate().alpha(0.0f).setDuration(ANIMATION_DURATION)
@@ -98,8 +103,23 @@ class MainFragment : Fragment() {
 
         // Launcht automatisch beim start der App den Server upload.
         lifecycleScope.launch {
+            btn_start_upload.alpha = 0f
             viewModel.changeTest("155155")
         }
+    }
+
+    /**
+     * Versteckt den [btn_start_upload] Button
+     */
+    private fun hideButton() {
+        btn_start_upload.animate().alpha(0.0f).setDuration(ANIMATION_DURATION)
+    }
+
+    /**
+     * Zeigt den [btn_start_upload] Button an
+     */
+    private fun showButton() {
+        btn_start_upload.animate().alpha(1.0f).setDuration(ANIMATION_DURATION)
     }
 
     /**

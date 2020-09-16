@@ -1,8 +1,17 @@
 # CHANGELOG
 
+## Version 1.0.0 Build 3 - 2020-09-16
+
+### Hinzugefügt
+
+- MainFragment.kt
+    - `private fun hideButton()` diese Funktion versteckt den `btn_start_upload`
+    - `private fun showButton()` diese Funktion zeigt den `btn_start_upload` an 
+
 ## Version 1.0.0 Build 2 - 2020-09-16
 
 ### Hinzugefügt
+
 - CHANGELOG.md
 - main_fragment.xml
     - `btn_start_upload` wurde hinzugefügt
