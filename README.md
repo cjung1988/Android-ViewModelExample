@@ -15,4 +15,4 @@ Diese App ist nicht aktuell, die folgenden Punkte werden hier noch dargestellt:
 - Unterschiedliche Fragmente anzeigen
 - Daten speichern, lesen und löschen in dem App-Folder
 
-![Alt-Text](https://unsplash.com/photos/v94mlgvsza4)
+![Alt-Text](/pictures/photo-1591198106611-7720c0ecdc97.jpeg)
