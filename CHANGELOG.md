@@ -1,5 +1,14 @@
 # CHANGELOG
 
+## Version 1.0.1 Build 5 - 2020-09-23
+
+### Hinzugefügt
+
+Room wurde hinzugefügt: 
+- AppDataBase.kt
+- User.kt
+- UserDao.kt
+
 ## Version 1.0.0 Build 3 - 2020-09-16
 
 ### Hinzugefügt

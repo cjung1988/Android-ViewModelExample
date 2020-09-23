@@ -15,4 +15,4 @@ Diese App ist nicht aktuell, die folgenden Punkte werden hier noch dargestellt:
 - Unterschiedliche Fragmente anzeigen
 - Daten speichern, lesen und löschen in dem App-Folder
 - Datum verarbeiten // parsen 
-
+- Room Beispiel für anhand einer Buchhandlung?!

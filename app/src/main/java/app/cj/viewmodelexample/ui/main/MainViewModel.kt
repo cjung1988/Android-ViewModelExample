@@ -1,12 +1,17 @@
 package app.cj.viewmodelexample.ui.main
 
+import android.app.Application
+import android.content.Context
+import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.room.Room
+import app.cj.viewmodelexample.database.AppDatabase
 import app.cj.viewmodelexample.model.MainModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
-class MainViewModel : ViewModel() {
+class MainViewModel(app : Application) : AndroidViewModel(app) {
 
     // Ein Beispiel value
     var test: MutableLiveData<String> = MutableLiveData("")
@@ -18,6 +23,11 @@ class MainViewModel : ViewModel() {
 
     // Hier wird das Mainmodel neu gebildet
     var model = MainModel()
+
+    val db = Room.databaseBuilder(
+        getApplication(),
+        AppDatabase::class.java, "database-name"
+    ).build()
 
     /**
      * suspend fun changeTest run on [Dispatchers.Default]
@@ -36,5 +46,7 @@ class MainViewModel : ViewModel() {
 
         // end progressbar
         updateIsRunning.postValue(false)
+
+        var test = db.userDao().getAll()
     }
 }
